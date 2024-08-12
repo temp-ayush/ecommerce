@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
-import com.wu.ecommerce.dto.Order;
+import com.wu.ecommerce.dto.User;
 import com.wu.ecommerce.dto.Product;
 import com.wu.ecommerce.exception.DataNotFoundException;
 import com.wu.ecommerce.exception.InvalidIdException;
 import com.wu.ecommerce.exception.InvalidPriceException;
-import com.wu.ecommerce.service.OrderService;
-import com.wu.ecommerce.service.OrderServiceImpl;
+import com.wu.ecommerce.service.UserService;
+import com.wu.ecommerce.service.UserServiceImpl;
 import com.wu.ecommerce.service.ProductService;
 import com.wu.ecommerce.service.ProductServiceImpl;
 
@@ -166,6 +166,8 @@ public class Main {
 //		}
 		try {
 		ProductService productService = ProductServiceImpl.getInstance();
+		UserService userService = UserServiceImpl.getInstance();
+		System.out.println("before  ");
 		Scanner sc = new Scanner(System.in);
 		int choice = 0 ;
 		while(true) {
@@ -175,7 +177,14 @@ public class Main {
 			System.out.println("4 - Get products by category");
 			System.out.println("5 - Remove Product by id");
 			System.out.println("6 - Update product by id");
-			System.out.println("7 - Exit");
+			System.out.println("7 - Add Product");
+			System.out.println("here ");
+			System.out.println("8 - Get Product by id");
+			System.out.println("9 - Get all products");
+			System.out.println("10 - Get products by category");
+			System.out.println("11 - Remove Product by id");
+			System.out.println("12 - Update product by id");
+			System.out.println("13 - Exit");
 			System.out.println("enter your choice");
 			choice = sc.nextInt();
 			
@@ -246,8 +255,37 @@ public class Main {
 				break;
 				
 			case 7:
+				User u1 = new User("ABCD", "Ayush", "Dudhani", "Badnapur", "7030775331");
+				User u2 = new User("ABCD", "Ayush", "Dudhani", "Badnapur", "7030775331");
+				User u3 = new User("ABCD", "Ayush", "Dudhani", "Badnapur", "7030775331");
+				User u4 = new User("ABCD", "Ayush", "Dudhani", "Badnapur", "7030775331");
+				User u5 = new User("ABCD", "Ayush", "Dudhani", "Badnapur", "7030775331");
+				userService.addUser(u1);
+				userService.addUser(u2);
+				userService.addUser(u3);
+				userService.addUser(u4);
+				userService.addUser(u5);
+				break;
+				
+			case 8: 
+				break;
+				
+			case 9:
+				break;
+				
+			case 10:
+				break;
+				
+			case 11:
+				break;
+				
+			case 12: 
+				break;
+				
+			case 13:
 				System.out.println("u asked to exit ? Exiting...");
 				break;
+			
 				
 			default: 
 				System.out.println("invalid input");

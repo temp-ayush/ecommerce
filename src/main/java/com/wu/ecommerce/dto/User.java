@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Order {
-	private String orderId;
+public class User {
+	private String userId;
 	private String firstName;
 	private String lastName;
 	private String address;
